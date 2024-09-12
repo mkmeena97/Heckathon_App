@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // CORS Middleware
 app.use(cors()); // Add CORS middleware if you need to allow cross-origin requests
 
-// Health check route
-// app.use("/health", (req, res) => {
-//   res.status(200).send('OK');
-// });
+//Health check route
+app.use("/health", (req, res) => {
+  res.status(200).send('OK');
+});
 
 // Use the hellorouter for /helloroute prefix
 app.use("/helloroute", hellorouter);

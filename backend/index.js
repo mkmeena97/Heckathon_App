@@ -1,12 +1,13 @@
 
-// import app from "./src/app.js";
-import express from 'express'
-const app = express()
+import { createServer } from "http";
+import app from "./src/app.js";
+import initSocket from "./src/config.js"; 
 
-app.get("/hello", (req, res) => {
-    res.send('Hello, from backend');
-  });
+const server = createServer(app);
+
+/* Socket Config */
+initSocket(server);
 
 /* Server Start */
-const PORT = 3000;
+const PORT = 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
