@@ -1,0 +1,18 @@
+{
+    "type":"",
+    "host":"db",
+    "port":5432,
+    "username":"",
+    "password":"",
+    "database":"",
+    "syncronize":true,
+    "logging":false,
+    "entities":[""],
+    "migrations":[""],
+    "subscriber":[""],
+    "cli":{
+        "entitiesDir":"",
+        "migrationDir":"",
+        "subscribersDir":""
+    }
+}

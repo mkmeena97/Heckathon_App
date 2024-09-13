@@ -1,28 +1,18 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import HackathonPage from './pages/HackathonPage';
+import HackathonForm from './components/HackathonForm';
 
-function App() {
-
-  const[backendData, setBackendData] = useState([{}])
-
-  useEffect(() => {
-    fetch("/hello")
-      .then(response => response.text()) 
-      .then(data => {
-        console.log(data)
-        setBackendData(data);
-      })
-      .catch(error => {
-        console.error("Error fetching data: ", error);
-      });
-  }, []);
-
-
-  return (
-    <div>
-      <h1>
-        {backendData}</h1>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/hackathon/:id" element={<HackathonPage />} />
+      <Route path="/edit/:id" element={<HackathonForm />} />
+      <Route path="/create" element={<HackathonForm />} />
+    </Routes>
+  </Router>
+);
 
 export default App;

@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import {hellorouter} from './routes/allroutes.js';
+import {hellorouter, organizer} from './routes/allroutes.js';
 
 const app = express();
 
@@ -20,5 +20,8 @@ app.use("/health", (req, res) => {
 
 // Use the hellorouter for /helloroute prefix
 app.use("/helloroute", hellorouter);
+app.use("/organizer", organizer)
+
+
 
 export default app;

@@ -1,4 +1,5 @@
-import { Server } from "socket.io";
+import { Server } from 'socket.io';
+
 
 /**
  * Initializes a socket server
@@ -27,4 +28,5 @@ const initSocket = (server) => {
   });
 };
 
-export default initSocket;
+// Named exports
+export  default initSocket ;
